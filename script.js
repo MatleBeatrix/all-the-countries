@@ -226,18 +226,16 @@ function loadEvent() {
             <ul>
                 <li>First Language</li>
             </ul>
-            
+
             <!-- ha landlocked true: <h5>"I've never met the sea</h5> -->
             <h5>${is_landlocked(peruO.landlocked)}</h5>
 
         </section>
     `;
 
-    console.log(peruO.landlocked);
     console.log(rootElement);
 
     rootElement.insertAdjacentHTML("beforeend", peruHTML);
-
 
 }
 
