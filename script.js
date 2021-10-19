@@ -203,10 +203,10 @@ const peru = [
 ];
 
 function is_landlocked(land) {
-    if (land == true){
+    if (land == true) {
         return "I've never met the sea";
     }
-        return "I've met the sea";
+    return "I've met the sea";
 }
 
 function loadEvent() {
@@ -226,7 +226,7 @@ function loadEvent() {
             <ul>
                 <li>First Language</li>
             </ul>
-
+            
             <!-- ha landlocked true: <h5>"I've never met the sea</h5> -->
             <h5>${is_landlocked(peruO.landlocked)}</h5>
 
