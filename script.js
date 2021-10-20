@@ -1,3 +1,4 @@
+/*
 const peru = [
     {
         "name": {
@@ -201,6 +202,7 @@ const peru = [
         "startOfWeek": "monday"
     }
 ];
+*/
 
 function is_landlocked(land) {
     if (land == true) {
@@ -209,14 +211,22 @@ function is_landlocked(land) {
     return "I've met the sea";
 }
 
-function loadEvent() {
+async function loadEvent() {
     const rootElement = document.getElementById("root");
+
+    const res = await fetch("https://restcountries.com/v3.1/name/peru");
+    const peru = await res.json();
+
+    /*
     console.log(`Peru's length: `,peru.length);
     console.log(typeof peru);
     console.log(peru[0].name.official);
 
     const peruO = peru[0];
     console.log(peruO);
+    */
+
+    const peruO = peru[0];
 
     const peruHTML = `
         <section class="independent">
@@ -234,7 +244,6 @@ function loadEvent() {
     `;
 
     console.log(rootElement);
-
     rootElement.insertAdjacentHTML("beforeend", peruHTML);
 
 }
