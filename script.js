@@ -205,7 +205,7 @@ const peru = [
 */
 
 function is_landlocked(land) {
-    if (land == true) {
+    if (land) {
         return "I've never met the sea";
     }
     return "I've met the sea";
@@ -214,17 +214,37 @@ function is_landlocked(land) {
 async function loadEvent() {
     const rootElement = document.getElementById("root");
 
-    const res = await fetch("https://restcountries.com/v3.1/name/peru");
-    const peru = await res.json();
+    const res = await fetch("https://restcountries.com/v3.1/all");
+    const countries = await res.json();
+
+    for (const country of countries) {
+        const countryHTML = `
+        <section class="independent">
+            <img src="${country.flags.png}" alt="flag">
+            <h1>${country.name.official}</h1>
+            <h2>${country.capital}</h2>
+            <ul>
+            <li>First Language</li>
+            </ul>
+            <h5>${is_landlocked(country.landlocked)}</h5>      
+        </section>
+        `;
+    rootElement.insertAdjacentHTML("beforeend", countryHTML);    
+    }
+
+
+    console.log(countries);
 
     /*
+
+    
     console.log(`Peru's length: `,peru.length);
     console.log(typeof peru);
     console.log(peru[0].name.official);
 
     const peruO = peru[0];
     console.log(peruO);
-    */
+    
 
     const peruO = peru[0];
 
@@ -245,7 +265,8 @@ async function loadEvent() {
 
     console.log(rootElement);
     rootElement.insertAdjacentHTML("beforeend", peruHTML);
-
+    
+    */
 }
 
 window.addEventListener("load", loadEvent);
