@@ -204,7 +204,7 @@ const peru = [
 ];
 */
 
-function is_landlocked(land) {
+function isLandLocked(land) {
     if (land) {
         return "I've never met the sea";
     }
@@ -222,11 +222,11 @@ async function loadEvent() {
         <section class="independent">
             <img src="${country.flags.png}" alt="flag">
             <h1>${country.name.official}</h1>
-            <h2>${country.capital}</h2>
+            <h3>${country.capital}</h3>
             <ul>
             <li>First Language</li>
             </ul>
-            <h5>${is_landlocked(country.landlocked)}</h5>      
+            <h5>${isLandLocked(country.landlocked)}</h5>      
         </section>
         `;
     rootElement.insertAdjacentHTML("beforeend", countryHTML);    

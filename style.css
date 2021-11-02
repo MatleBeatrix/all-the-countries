@@ -30,6 +30,27 @@ button, input, textarea, select {
     border-radius: 0;
 }
 
+body {
+    font-family: 'Overpass', sans-serif;
+}
+
+#root {
+    max-width: 1200px;
+    background-color: #a1f5ea;
+    margin: 80px auto;
+    
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px;
+    grid-gap: 40px;
+    min-height: 100vh;
+  
+  }
+
+
+
+
 /*
 #root{
     width: 300px;
